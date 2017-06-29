@@ -95,7 +95,7 @@
 //                         i++;
 //                         out.println(points);
 //                       }
-                       out.print("Customer Name: "+ rs.getString("CUSTOMERNAME") + '\n');           
+//                       out.print("Customer Name: "+ rs.getString("CUSTOMERNAME") + '\n');           
                     }
 //                    out.println("TOTAL No. OF CUST = " + i + '\n')
 
