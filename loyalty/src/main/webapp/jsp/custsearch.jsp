@@ -39,7 +39,7 @@
                   int offer = Integer.parseInt(request.getParameter("offer"));
                   
                   
-                  out.println("offer = " + request.getParameter("offer") +'\n');      
+//                  out.println("offer = " + request.getParameter("offer") +'\n');      
                   out.println("points = " + offer +'\n');
                     
                   while(rs.next())
@@ -50,8 +50,7 @@
                     {
                       i++;
                       out.println(points);
-                    }
-//                    out.print("Customer Name: "+ rs.getString("CUSTOMERNAME") + '\n');           
+                    }          
                   }
                   out.println("i = " + i + '\n');
                   
@@ -60,10 +59,9 @@
                 } catch (Exception e)
                 {
                   out.println("Exception : " + e.getMessage() + "");
-                  
                 }
 %>
-            
+
             
         </div>
     </body>
