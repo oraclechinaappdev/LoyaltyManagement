@@ -37,22 +37,19 @@
                   int i = 0;
                   int points = 0;
                   int offer = Integer.parseInt(request.getParameter("offer"));
-                  Integer x = Integer.valueOf(request.getParameter("offer"));
                   
-                  out.println("x = " + x +'\n');
                   
-                  out.println("offer = " + request.getParameter("offer") +'\n');
-                  
+                  out.println("offer = " + request.getParameter("offer") +'\n');      
                   out.println("points = " + offer +'\n');
                     
                   while(rs.next())
                   {       
                     points = rs.getInt("POINTS");
 
-                    if(points < offer)
+                    if(points > offer)
                     {
                       i++;
- //                     out.println(points);
+                      out.println(points);
                     }
 //                    out.print("Customer Name: "+ rs.getString("CUSTOMERNAME") + '\n');           
                   }
