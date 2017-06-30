@@ -61,51 +61,47 @@
   
 
 <%
-              InitialContext ctx;
-              DataSource ds;
-              Connection conn;
-              Statement st;
-              ResultSet rs;
+            InitialContext ctx;
+            DataSource ds;
+            Connection conn;
+            Statement st;
+            ResultSet rs;
               
-              String username = request.getParameter("sys");
-              String password = request.getParameter("Alpha2014_");
+//            String username = request.getParameter("sys");
+//            String password = request.getParameter("Alpha2014_");
+//            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//141.144.83.181:1521/PDB1.gse00010885.oraclecloud.internal", username, password);
 
-              try {
+
+            try {
                   ctx = new InitialContext();
                   ds = (DataSource) ctx.lookup("jdbc/loyaltyDS");
                   conn = ds.getConnection();
+
                   st = conn.createStatement();
                   rs = st.executeQuery("SELECT * FROM CUSTOMER");
-//                  out.println(rs);
-  
-                  
-//                    Connection con = DriverManager.getConnection("jdbc:oracle:thin:@//100.65.41.114:1521/PDB1.gse00010885.oraclecloud.internal", "sys", "Alpha2014_");
-//                    Statement st = con.createStatement();
-//                    String query = "SELECT productName, sal FROM (username, password) values ('"+username+"','"+password+"')";
-//                    ResultSet rs = st.executeQuery(query);
                     
-//                    int i=0;
+                  int i=0;
                     
-                    while(rs.next())
-                    {       
-//                        int points = rs.getInt("POINTS"));
-                        
-//                       if(points < 30000)
-//                       {
-//                         i++;
-//                         out.println(points);
-//                       }
-//                       out.print("Customer Name: "+ rs.getString("CUSTOMERNAME") + '\n');           
-                    }
-//                    out.println("TOTAL No. OF CUST = " + i + '\n')
+                  while(rs.next())
+                  {       
+//                    int points = rs.getInt("POINTS"));
 
-                   } catch (Exception e)
-                   {
-                     out.println("Exception : " + e.getMessage() + "");
-                   }
+                    i++;
+                      
+//                    if(points < 30000)
+//                    {
+//                      i++;
+//                      out.println(points);
+//                    }
+//                    out.print("Customer Name: "+ rs.getString("CUSTOMERNAME") + '\n');           
+                  }
+//                  out.println("TOTAL No. OF CUST = " + i + '\n')
+
+                  } catch (Exception e)
+                  {
+                    out.println("Exception : " + e.getMessage() + "");
+                  }
 %>
-
-
 
     
             <%-- To display selected value from dropdown list. --%>
