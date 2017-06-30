@@ -73,6 +73,7 @@
                     <input type="text" name="offer" value=request.getParameter("offer")/>
                     <button type="submit" class="btn btn-primary  btn-md">Search</button>                                   
                    
+                   
                     <br></br>
                   
                     <label for="target" class="control-label col-xs-4"># of Target Customers:</label>  
