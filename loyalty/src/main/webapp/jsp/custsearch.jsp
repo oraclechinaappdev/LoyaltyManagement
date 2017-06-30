@@ -52,7 +52,7 @@
 //                      out.println(points);
                     }          
                   }
-                  out.println("i = " + i + '\n');
+//                  out.println("i = " + i + '\n');
                   
                   st.close();
 
@@ -70,7 +70,7 @@
 
                 <div class="form-group col-xs-8">
                     <label for="offer" class="control-label col-xs-4">Input Offer Criteria:</label>
-                    <input type="text" name="offer" value=request.getParameter("offer")/>
+                    <input type="text" name="offer" value=<%=request.getParameter("offer")%>/>
                     <button type="submit" class="btn btn-primary  btn-md">Search</button>                                   
                    
                    
