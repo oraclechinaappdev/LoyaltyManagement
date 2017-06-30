@@ -58,10 +58,7 @@
             
             <form action="welcome.jsp" method="post">        
                 <div class="form-group col-xs-8">
-                    <br></br>
-                    <br></br>
-                  
-                  <button type="submit" class="btn btn-primary  btn-md">Clear</button>
+                  <button type="reset" class="btn btn-primary  btn-md">Clear</button>
                 </div>
             </form>
 

@@ -52,7 +52,7 @@
                     if(points < offer)
                     {
                       i++;
-                      out.println(points);
+ //                     out.println(points);
                     }
 //                    out.print("Customer Name: "+ rs.getString("CUSTOMERNAME") + '\n');           
                   }
