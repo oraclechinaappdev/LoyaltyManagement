@@ -38,7 +38,8 @@
                   int points = 0;
                   int offer = Integer.parseInt(request.getParameter("offer"));
                   
-                  out.println("point: " + points +'\n');
+                  out.println("offer = " + request.getParameter("offer") +'\n');
+                  out.println("points = " + points +'\n');
                     
                   while(rs.next())
                   {       

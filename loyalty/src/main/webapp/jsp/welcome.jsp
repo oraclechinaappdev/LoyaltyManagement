@@ -57,65 +57,7 @@
                   <button type="submit" class="btn btn-primary  btn-md">Clear</button>
                 </div>
             </form>
-            
-  
 
-<%
-            InitialContext ctx;
-            DataSource ds;
-            Connection conn;
-            Statement st;
-            ResultSet rs;
-              
-//            String username = request.getParameter("sys");
-//            String password = request.getParameter("Alpha2014_");
-//            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//141.144.83.181:1521/PDB1.gse00010885.oraclecloud.internal", username, password);
-
-
-            try {
-                  ctx = new InitialContext();
-                  ds = (DataSource) ctx.lookup("jdbc/loyaltyDS");
-                  conn = ds.getConnection();
-
-                  st = conn.createStatement();
-                  rs = st.executeQuery("SELECT * FROM CUSTOMER");
-                    
-                  int i = 0;
-                  int points = 0;
-                    
-                  while(rs.next())
-                  {       
-                    points = rs.getInt("POINTS");
-
-                    if(points < 30000)
-                    {
-                      i++;
-                      out.println(points);
-                    }
-//                    out.print("Customer Name: "+ rs.getString("CUSTOMERNAME") + '\n');           
-                  }
-                  out.println("i = " + i + '\n');
-                  
-                  st.close();
-
-                } catch (Exception e)
-                {
-                  out.println("Exception : " + e.getMessage() + "");
-                  
-                }
-%>
-
-    
-            <%-- To display selected value from dropdown list. --%>
-     <% 
-                String s=request.getParameter("item");
-                if (s !=null)
-                {
-                    out.println("Selected Color is : "+s);
-                }
-      %>
-            
-            
         </div>
     </body>
 </html>
