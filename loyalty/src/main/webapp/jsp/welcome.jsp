@@ -95,7 +95,7 @@
 //                    }
 //                    out.print("Customer Name: "+ rs.getString("CUSTOMERNAME") + '\n');           
                   }
-//                  out.println("TOTAL No. OF CUST = " + i + '\n')
+                  out.println("i = " + i + '\n')
 
                   } catch (Exception e)
                   {
