@@ -40,7 +40,7 @@
                   
                   
 //                  out.println("offer = " + request.getParameter("offer") +'\n');      
-                  out.println("points = " + offer +'\n');
+//                  out.println("points = " + offer +'\n');
                     
                   while(rs.next())
                   {       
@@ -49,7 +49,7 @@
                     if(points > offer)
                     {
                       i++;
-                      out.println(points);
+//                      out.println(points);
                     }          
                   }
                   out.println("i = " + i + '\n');
@@ -62,7 +62,27 @@
                 }
 %>
 
+       <div class="container">
+            <form action="custsearch.jsp" method="post">
+                <h2>Welcome to the Loyalty Manager !!</h2>
+
+                <br></br>
+
+                <div class="form-group col-xs-8">
+                    <label for="offer" class="control-label col-xs-4">Input Offer Criteria:</label>
+                    <input type="text" name="offer" value=${request.getParameter("offer")}/>
+                    <button type="submit" class="btn btn-primary  btn-md">Search</button>                                   
+                   
+                    <br></br>
+                  
+                    <label for="target" class="control-label col-xs-4"># of Target Customers:</label>  
+                    <input type="text" name="target" disabled="disabled" value="${i}"/>
+                </div>
+            </form>
+       </div>
+
+
             
-        </div>
+
     </body>
 </html>
