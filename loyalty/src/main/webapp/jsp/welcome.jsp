@@ -46,17 +46,15 @@
                     <br></br>
                     <br></br>
                     
-                  <button type="submit" class="btn btn-primary  btn-md">Next</button>
-                  <button type="submit" class="btn btn-primary  btn-md" onclick="welcome.jsp">Clear</button>               
+                  <button type="submit" class="btn btn-primary  btn-md">Next</button>              
                 </div>
             </form>
-<%--     
+
             <form action="welcome.jsp" method="post">        
                 <div class="form-group col-xs-8">
                   <button type="submit" class="btn btn-primary  btn-md">Clear</button>
                 </div>
             </form>
---%>
         </div>
     </body>
 </html>
