@@ -85,7 +85,31 @@
             </form>
        </div>
 
+       <form action="createoffer.jsp" method="post">        
+            <div class="form-group col-xs-8">
+                <br></br>
 
+                <label for="target" class="control-label col-xs-4">Target Product:</label>
+
+
+                <select name="item">
+                  <option value="1">Red</option>
+                  <option value="2">Blue</option>
+                  <option value="3">Green</option>
+                </select>
+                    
+                <br></br>
+                <br></br>
+                    
+              <button type="submit" class="btn btn-primary  btn-md">Next</button>
+            </div>
+        </form>
+            
+        <form action="welcome.jsp" method="post">        
+            <div class="form-group col-xs-8">
+              <button type="submit" class="btn btn-primary  btn-md">Clear</button>
+            </div>
+        </form>
             
 
     </body>

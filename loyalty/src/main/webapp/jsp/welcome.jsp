@@ -36,7 +36,7 @@
                 </div>
             </form>
 
-            <form action="manager" method="post">        
+            <form action="createoffer.jsp" method="post">        
                 <div class="form-group col-xs-8">
                     <br></br>
 
@@ -52,13 +52,13 @@
                     <br></br>
                     <br></br>
                     
-                  <button type="submit" class="btn btn-primary  btn-md">Submit</button>
+                  <button type="submit" class="btn btn-primary  btn-md">Next</button>
                 </div>
             </form>
             
             <form action="welcome.jsp" method="post">        
                 <div class="form-group col-xs-8">
-                  <button type="reset" class="btn btn-primary  btn-md">Clear</button>
+                  <button type="submit" class="btn btn-primary  btn-md">Clear</button>
                 </div>
             </form>
 
