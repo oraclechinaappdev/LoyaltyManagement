@@ -19,7 +19,7 @@
     </head>
     <body>
         <div class="container">
-            <form action="manager" method="post">
+            <form action="custsearch.jsp" method="post">
                 <h2>Welcome to the Loyalty Manager !!</h2>
 
                 <br></br>
@@ -95,11 +95,14 @@
 //                    out.print("Customer Name: "+ rs.getString("CUSTOMERNAME") + '\n');           
                   }
                   out.println("i = " + i + '\n');
+                  
+                  st.close();
 
-                  } catch (Exception e)
-                  {
-                    out.println("Exception : " + e.getMessage() + "");
-                  }
+                } catch (Exception e)
+                {
+                  out.println("Exception : " + e.getMessage() + "");
+                  
+                }
 %>
 
     
