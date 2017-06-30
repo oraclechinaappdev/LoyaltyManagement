@@ -80,19 +80,18 @@
                   st = conn.createStatement();
                   rs = st.executeQuery("SELECT * FROM CUSTOMER");
                     
-                  int i=0;
+                  int i = 0;
+                  int points = 0;
                     
                   while(rs.next())
                   {       
-//                    int points = rs.getInt("POINTS"));
+                    points = rs.getInt("POINTS");
 
-                    i++;
-                      
-//                    if(points < 30000)
-//                    {
-//                      i++;
-//                      out.println(points);
-//                    }
+                    if(points < 30000)
+                    {
+                      i++;
+                      out.println(points);
+                    }
 //                    out.print("Customer Name: "+ rs.getString("CUSTOMERNAME") + '\n');           
                   }
                   out.println("i = " + i + '\n');
