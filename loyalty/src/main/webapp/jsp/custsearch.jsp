@@ -25,6 +25,9 @@
             Connection conn;
             Statement st;
             ResultSet rs;
+            int i = 0;
+            int points = 0;
+            int offer = 0;
 
             try {
                   ctx = new InitialContext();
@@ -34,9 +37,9 @@
                   st = conn.createStatement();
                   rs = st.executeQuery("SELECT * FROM CUSTOMER");
                     
-                  int i = 0;
-                  int points = 0;
-                  int offer = Integer.parseInt(request.getParameter("offer"));
+                  i = 0;
+                  points = 0;
+                  offer = Integer.parseInt(request.getParameter("offer"));
                   
                   
 //                  out.println("offer = " + request.getParameter("offer") +'\n');      
@@ -70,14 +73,14 @@
 
                 <div class="form-group col-xs-8">
                     <label for="offer" class="control-label col-xs-4">Input Offer Criteria:</label>
-                    <input type="text" name="offer" value=<%=request.getParameter("offer")%>/>
+                    <input type="text" name="offer" value='<%=request.getParameter("offer")%>'/>
                     <button type="submit" class="btn btn-primary  btn-md">Search</button>                                   
                    
                    
                     <br></br>
                   
                     <label for="target" class="control-label col-xs-4"># of Target Customers:</label>  
-                    <input type="text" name="target" disabled="disabled" value=i/>
+                    <input type="text" name="target" disabled="disabled" value="<%=i%>"/>
                 </div>
             </form>
        </div>
