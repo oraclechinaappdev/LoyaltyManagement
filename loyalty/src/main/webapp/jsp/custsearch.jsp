@@ -70,13 +70,13 @@
 
                 <div class="form-group col-xs-8">
                     <label for="offer" class="control-label col-xs-4">Input Offer Criteria:</label>
-                    <input type="text" name="offer" value=${request.getParameter("offer")}/>
+                    <input type="text" name="offer" value=request.getParameter("offer")/>
                     <button type="submit" class="btn btn-primary  btn-md">Search</button>                                   
                    
                     <br></br>
                   
                     <label for="target" class="control-label col-xs-4"># of Target Customers:</label>  
-                    <input type="text" name="target" disabled="disabled" value="${i}"/>
+                    <input type="text" name="target" disabled="disabled" value=i/>
                 </div>
             </form>
        </div>
