@@ -53,6 +53,13 @@
                     <br></br>
                     
                   <button type="submit" class="btn btn-primary  btn-md">Submit</button>
+                </div>
+            </form>
+            
+            <form action="welcome.jsp" method="post">        
+                <div class="form-group col-xs-8">
+                    <br></br>
+                    <br></br>
                   
                   <button type="submit" class="btn btn-primary  btn-md">Clear</button>
                 </div>
