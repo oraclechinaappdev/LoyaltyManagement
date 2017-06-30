@@ -36,14 +36,15 @@
                     
                   int i = 0;
                   int points = 0;
+                  int offer = Integer.parseInt(request.getParameter("offer"));
                   
-                  out.println("point: " + request.getParameter("offer") +'\n');;
+                  out.println("point: " + points +'\n');
                     
                   while(rs.next())
                   {       
                     points = rs.getInt("POINTS");
 
-                    if(points < 30000)
+                    if(points < offer)
                     {
                       i++;
                       out.println(points);
