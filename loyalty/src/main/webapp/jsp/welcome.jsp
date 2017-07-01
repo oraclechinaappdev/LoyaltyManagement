@@ -37,7 +37,7 @@
             while(rs.next())
             {       
               prod = rs.getString("PRODUCTNAME");
-              out.println(prod);
+//              out.println(prod);
    
             }
                   
