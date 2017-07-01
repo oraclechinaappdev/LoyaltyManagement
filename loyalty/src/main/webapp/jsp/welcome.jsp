@@ -32,7 +32,7 @@
             ds = (DataSource) ctx.lookup("jdbc/loyaltyDS");
             conn = ds.getConnection();
             st = conn.createStatement();
-            rs = st.executeQuery("SELECT * FROM CUSTOMER");
+            rs = st.executeQuery("SELECT * FROM PRODUCT");
  
             while(rs.next())
             {       
