@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ page import="java.sql.*"%>
+<%@ page import="oracle.jdbc.driver.*" %>
+<%@ page import="oracle.sql.*" %>
+<%@ page import="oracle.jdbc.driver.OracleDriver"%>
+<%@ page import="javax.sql.*" %>
+<%@ page import="java.io.*" %>
+<%@ page import="javax.naming.*" %>
 
 <!DOCTYPE html>
 
@@ -12,6 +18,41 @@
         <title>Create Offer</title>     
     </head>
     <body>
+    
+<%
+      InitialContext ctx;
+      DataSource ds;
+      Connection conn;
+      Statement st;
+      ResultSet rs;
+      String prod;
+
+      try {
+            ctx = new InitialContext();
+            ds = (DataSource) ctx.lookup("jdbc/loyaltyDS");
+            conn = ds.getConnection();
+            st = conn.createStatement();
+            rs = st.executeQuery("SELECT * FROM CUSTOMER");
+ 
+            while(rs.next())
+            {       
+              prod = rs.getInt("PRODUCTNAME");
+              out.println(prod);
+   
+            }
+                  
+            st.close();
+
+            } catch (Exception e)
+            {
+              out.println("Exception : " + e.getMessage() + "");
+            }
+          }
+%>
+    
+    
+    
+    
         <div class="container">
             <form action="custsearch.jsp" method="post">
                 <h2>Welcome to the Loyalty Manager !!</h2>
