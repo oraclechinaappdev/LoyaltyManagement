@@ -77,7 +77,6 @@
 
                     <label for="target" class="control-label col-xs-4">Target Product:</label>
 
-
                     <select name="item">
                       <option value="1">Red</option>
                       <option value="2">Blue</option>
