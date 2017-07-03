@@ -55,7 +55,7 @@
     
         <div class="container">
             <form action="custsearch.jsp" method="post">
-                <h2>Test Welcome to the Loyalty Manager !!!</h2>
+                <h2>Test Welcome to the Loyalty Manager !!</h2>
 
                 <br></br>
 
