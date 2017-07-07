@@ -102,16 +102,18 @@
     con.setRequestProperty("Oracle-Mobile-Backend-ID","4a9d0d32-8aad-48fb-b803-5315459dce9f");
     // This is the anonymouse key
     // --CHANGE-ME--
-    con.setRequestProperty("Authorization","Basic R1NFMDAwMTE2NzhfTUNTX01PQklMRV9BTk9OWU1PVVNfQVBQSUQ6Smk3cXBld3lrczlfbmI=");
+    con.setRequestProperty("Authorization","Basic d2FuZ3lpZmVuZzpXYW5Ub25ANk5vUlNl");
     con.setRequestProperty("Content-Type","application/json");
     con.setDoOutput(true);
     // This is the JSON payload of the push notification
     //
     // PLACE HOLDER to create the JSON payload
     //
-    String POST_PARAMS =  " { \"template\": { \"name\": \"#default\", \"parameters\": { \"title\": \"Reminder\", ";
-    POST_PARAMS = POST_PARAMS + " \"body\": \"Status on incident 1548 is due.\", \"custom\": { \"offerId\": 10001 ";
-    POST_PARAMS = POST_PARAMS + "  } } }, \"tag\":\"Offers\", \"users\":[ \"mcs-demo_user07@oracleads.com\" ] } ";
+    String POST_PARAMS = "{\"message\": \"" + offmsg + "\", ";
+     POST_PARAMS = POST_PARAMS + "\"offerid\": " + nextid + "}";
+    // String POST_PARAMS =  " { \"template\": { \"name\": \"#default\", \"parameters\": { \"title\": \"Reminder\", ";
+    // POST_PARAMS = POST_PARAMS + " \"body\": \"Status on incident 1548 is due.\", \"custom\": { \"offerId\": 10001 ";
+    // POST_PARAMS = POST_PARAMS + "  } } }, \"tag\":\"Offers\", \"users\":[ \"mcs-demo_user07@oracleads.com\" ] } ";
     // sending the POSOT request to MCS
     OutputStream os = con.getOutputStream();
 		os.write(POST_PARAMS.getBytes());
@@ -122,7 +124,7 @@
 		// System.out.println("POST Response Code :: " + responseCode);
     //
     // checking response from MCS
-		if (responseCode == HttpsURLConnection.HTTP_OK) { //success
+		if (responseCode == HttpsURLConnection.HTTP_CREATED) { //success
 			BufferedReader in = new BufferedReader(new InputStreamReader(
 				con.getInputStream()));
 			String inputLine;
@@ -135,7 +137,7 @@
       out.println("<br />");
       out.println("<br /> ");
       out.println("<div style=\"background:#eeffee; padding:5px\">");
-      out.print("responsemcs.toString()");
+      out.print(responsemcs.toString());
       out.println("</div>");
 		} else {
       out.println("<br />");
