@@ -92,17 +92,22 @@
 
     // This is the actual MCS URL
     // --CHANGE-ME--
-    String mcs = "https://mcs-gse00011678.mobileenv.us2.oraclecloud.com:443/mobile/custom/LoyaltyManagementAPI/offer/notify";
+    // https://mcs-{your-mcs-identity-domain}.mobileenv.us2.oraclecloud.com:443/mobile/custom/LoyaltyManagementAPI/offer/notify
+    String mcs = "https://YOUR-MCS-DOMAIN.mobileenv.us2.oraclecloud.com:443/mobile/custom/LoyaltyManagementAPI/offer/notify";
+    //
     URL obj = new URL(null, mcs, new sun.net.www.protocol.https.Handler());
     HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
     con.setHostnameVerifier(hostnameVerifier);
     con.setRequestMethod("POST");
     // This is the MCS MBE
     // --CHANGE-ME--
-    con.setRequestProperty("Oracle-Mobile-Backend-ID","4a9d0d32-8aad-48fb-b803-5315459dce9f");
+    //   Please replace with your MCS Mobile Backend
+    con.setRequestProperty("Oracle-Mobile-Backend-ID","YOUR-MOBILE-BACKEND-ID");
     // This is the anonymouse key
     // --CHANGE-ME--
-    con.setRequestProperty("Authorization","Basic d2FuZ3lpZmVuZzpXYW5Ub25ANk5vUlNl");
+    //   Please replace with your MBE authentication (anonymous) key
+    con.setRequestProperty("Authorization","Basic YOUR-MCS-KEY");
+    //
     con.setRequestProperty("Content-Type","application/json");
     con.setDoOutput(true);
     // This is the JSON payload of the push notification
@@ -110,10 +115,9 @@
     // PLACE HOLDER to create the JSON payload
     //
     String POST_PARAMS = "{\"message\": \"" + offmsg + "\", ";
-     POST_PARAMS = POST_PARAMS + "\"offerid\": " + nextid + "}";
-    // String POST_PARAMS =  " { \"template\": { \"name\": \"#default\", \"parameters\": { \"title\": \"Reminder\", ";
-    // POST_PARAMS = POST_PARAMS + " \"body\": \"Status on incident 1548 is due.\", \"custom\": { \"offerId\": 10001 ";
-    // POST_PARAMS = POST_PARAMS + "  } } }, \"tag\":\"Offers\", \"users\":[ \"mcs-demo_user07@oracleads.com\" ] } ";
+      POST_PARAMS = POST_PARAMS + "\"offerid\": " + nextid + "}";
+    //
+    //
     // sending the POSOT request to MCS
     OutputStream os = con.getOutputStream();
 		os.write(POST_PARAMS.getBytes());
