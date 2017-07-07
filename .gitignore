@@ -5,3 +5,7 @@ npm-debug.log*
 node_modules
 .npm
 .DS_Store
+.WL_internal
+.settings
+target
+*.kenbak
