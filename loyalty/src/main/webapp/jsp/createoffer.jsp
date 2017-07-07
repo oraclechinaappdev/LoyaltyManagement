@@ -103,7 +103,7 @@
 --%>
 
                     <label for="target" class="control-label col-xs-4">Offer Message:</label>
-                    <textarea rows="5" cols="30" placeholder="enter offer message"></textarea><br />
+                    <textarea name="offmsg" rows="5" cols="30" placeholder="enter offer message"></textarea><br />
 
                     <br></br>
                     <button type="button" class="btn btn-primary  btn-md" onclick="location.href = 'welcome.jsp';">Cancel</button>
