@@ -7,7 +7,7 @@ This is the Git Repository for APAC Cloud Test Drive - **Java Apps Lab** - Loyal
 This Java App will be deployed on [Java Cloud Service](https://cloud.oracle.com/en_US/java).
 
 For details of the Lab, please visit
-  https://github.com/APACTestDrive/CloudNative_Mobile/blob/master/Java%20Apps/JavaAppsLab.md
+  https://github.com/APACTestDrive/CloudNative_Mobile/tree/master/Java%20Apps
 
 ## [License](LICENSE.md)
 
