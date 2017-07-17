@@ -79,7 +79,7 @@
           <br></br>
           <label for="target" class="control-label col-xs-4"># of Target Customers:</label>
           <input type="text" name="target" disabled="disabled" value="${result}"/>
-          <input type="hidden" name="product" value="Samsam Galaxy 7"/>
+          <input type="hidden" name="product" value="Aroma Beans"/>
         </div>
       </form>
       <!-- the 2nd form is for create offer AFTER search -->
