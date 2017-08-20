@@ -40,6 +40,15 @@
   String offmsg = request.getParameter("offmsg");
   int reqpoint = Integer.parseInt(request.getParameter("offer"));
   String mysql = "";
+  String mcssql = "";
+  String annoy = "";
+  String mbeid = "";
+  String mcsiddom = "";
+  String apiname  = "";
+  String appkey   = "";
+  String senderid = "";
+  String mcs="";
+
   try {
     // created DB connection
     ctx = new InitialContext();
@@ -76,6 +85,20 @@
     //
     // PLACE HOLDER of SQL code to get all userids
     //
+    // Getting MCS info to send PUSH
+    //
+    mcssql = "select ID,ANNOY,MBEID,MCSIDDOM,APINAME,APPKEY,SENDERID from settinz where ID=1";
+    rs = st.executeQuery(mcssql);
+    while (rs.next())
+    {
+      annoy = rs.getString("ANNOY").trim();
+      mbeid = rs.getString("MBEID").trim();
+      mcsiddom = rs.getString("MCSIDDOM").trim();
+      apiname  = rs.getString("APINAME").trim();
+      appkey   = rs.getString("APPKEY").trim();
+      senderid = rs.getString("SENDERID").trim();
+    }
+
     // close the DB first
     st.close();
     // This is the most tricky party
@@ -91,22 +114,20 @@
     };
 
     // This is the actual MCS URL
-    // --CHANGE-ME--
+    //    it is composed with parameters in DB
     // https://mcs-{your-mcs-identity-domain}.mobileenv.us2.oraclecloud.com:443/mobile/custom/LoyaltyManagementAPI/offer/notify
-    String mcs = "https://YOUR-MCS-DOMAIN.mobileenv.us2.oraclecloud.com:443/mobile/custom/LoyaltyManagementAPI/offer/notify";
+    mcs = "https://mcs-" + mcsiddom + ".mobileenv.us2.oraclecloud.com:443/mobile/custom/" + apiname + "/offer/notify";
     //
     URL obj = new URL(null, mcs, new sun.net.www.protocol.https.Handler());
     HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
     con.setHostnameVerifier(hostnameVerifier);
     con.setRequestMethod("POST");
     // This is the MCS MBE
-    // --CHANGE-ME--
-    //   Please replace with your MCS Mobile Backend
-    con.setRequestProperty("Oracle-Mobile-Backend-ID","YOUR-MOBILE-BACKEND-ID");
+    //   which is retrieve from DB
+    con.setRequestProperty("Oracle-Mobile-Backend-ID",mbeid);
     // This is the anonymouse key
-    // --CHANGE-ME--
-    //   Please replace with your MBE authentication (anonymous) key
-    con.setRequestProperty("Authorization","Basic YOUR-MCS-KEY");
+    //   which is retrieve from DB
+    con.setRequestProperty("Authorization","Basic " + annoy);
     //
     con.setRequestProperty("Content-Type","application/json");
     con.setDoOutput(true);
@@ -158,6 +179,7 @@
     out.println("<div style=\"background:#eeffee; padding:5px\">");
     out.println("Exception : " + e.getMessage() + "");
     out.println("<br/><br/>Please contact administrator");
+    out.println("<br>" + mcs + "<br>");
     out.println("</div>");
   }
 %>

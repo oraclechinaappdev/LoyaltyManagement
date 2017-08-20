@@ -14,7 +14,7 @@
   <script src="../js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">  
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Welcome to Loyalty Manager</title>
   <style>
@@ -130,7 +130,12 @@
             <!-- submit button will call checkform() function to handle data validation -->
             <button type="button" class="btn btn-primary  btn-md" onclick="return checkform(document.coffer.item.value)">Next</button>
         </div>
+
       </form>
+      <div class="form-group col-xs-8">
+        <br/><br/><br/>
+        <font size="1">&nbsp;&nbsp;&nbsp;[ <a href="config.jsp">Configure Push Notification</a> ]</font>
+      </div>
   </div>
 </body>
 </html>
