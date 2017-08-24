@@ -1,6 +1,6 @@
 <%
 
-String redirectURL = "/loyalty/jsp/welcome.jsp";
+String redirectURL = "jsp/welcome.jsp";
 response.sendRedirect(redirectURL);
 
 %>
