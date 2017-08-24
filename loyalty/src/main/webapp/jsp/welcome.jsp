@@ -68,7 +68,7 @@
   <!-- this is the pop-up dialog to remind user need to do search before proceed -->
   <div id="dialog" title="Warning">Please enter the offer criteria and click search befor proceed. Criteria must be a positive integer.</div>
   <div class="container">
-      <!-- we actually have 2 forms in this page, first one is for search -->
+      <!-- we actually have 2 forms in this page, first is for search -->
       <form name="search" action="custsearch.jsp" method="post">
         <h2>Welcome to the Loyalty Manager !!</h2>
         <br></br>
