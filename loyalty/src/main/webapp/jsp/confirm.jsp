@@ -116,7 +116,7 @@
     // This is the actual MCS URL
     //    it is composed with parameters in DB
     // https://mcs-{your-mcs-identity-domain}.mobileenv.us2.oraclecloud.com:443/mobile/custom/LoyaltyManagementAPI/offer/notify
-    mcs = "https://mcs-" + mcsiddom + ".mobileenv.us2.oraclecloud.com:443/mobile/custom/" + apiname + "/offer/notify";
+    mcs = mcsiddom + "/mobile/custom/" + apiname + "/offer/notify";
     //
     URL obj = new URL(null, mcs, new sun.net.www.protocol.https.Handler());
     HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
@@ -162,6 +162,7 @@
       out.println("<br />");
       out.println("<br /> ");
       out.println("<div style=\"background:#eeffee; padding:5px\">");
+      out.println(mcs + "<br/>");
       out.print(responsemcs.toString());
       out.println("</div>");
 		} else {
