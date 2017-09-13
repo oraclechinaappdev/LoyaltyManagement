@@ -84,8 +84,8 @@
 <!-- back to HTML markup -->
     <br/> <br/><br/>
     <div class="form-group col-xs-8">
-      <label for="mcsiddom" class="control-label col-xs-4">MCS Identity Domain:</label>
-      <input type="text" name="mcsiddom" value='<%=mcsiddom%>' />
+      <label for="mcsiddom" class="control-label col-xs-4">MCS Base URL:</label>
+      <input type="text" name="mcsiddom" value='<%=mcsiddom%>' size=60/>
       <br></br>
       <label for="mbeid" class="control-label col-xs-4">Mobile Backend ID:</label>
       <input type="text" name="mbeid" value="<%=mbeid%>" size=60 />
