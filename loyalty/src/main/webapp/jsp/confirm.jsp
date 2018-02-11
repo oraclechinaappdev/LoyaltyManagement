@@ -116,7 +116,7 @@
     // This is the actual MCS URL
     //    it is composed with parameters in DB
     // https://mcs-{your-mcs-identity-domain}.mobileenv.us2.oraclecloud.com:443/mobile/custom/LoyaltyManagementAPI/offer/notify
-    mcs = mcsiddom + "/mobile/custom/" + apiname + "/offer/notify";
+    mcs = mcsiddom + "/mobile/custom/" + mypush + "/notifyAll";
     //
     URL obj = new URL(null, mcs, new sun.net.www.protocol.https.Handler());
     HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
@@ -135,13 +135,19 @@
     //
     // PLACE HOLDER to create the JSON payload
     //
-    String POST_PARAMS = "{\"message\": \"" + offmsg + "\", ";
-      POST_PARAMS = POST_PARAMS + "\"offerid\": " + nextid + "}";
+    //String POST_PARAMS = "{\"message\": \"" + offmsg + "\", ";
+    //  POST_PARAMS = POST_PARAMS + "\"offerid\": " + nextid + "}";
+
+   String urlParameters  = "title="+offmsg"&descrption=offer-"+nextid;
+   byte[] postData       = urlParameters.getBytes( StandardCharsets.UTF_8 );
+   int    postDataLength = postData.length;
     //
     //
     // sending the POSOT request to MCS
+   con.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
     OutputStream os = con.getOutputStream();
-		os.write(POST_PARAMS.getBytes());
+	//	os.write(POST_PARAMS.getBytes());
+        os.write(postData));
 		os.flush();
 		os.close();
 		int responseCode = con.getResponseCode();
