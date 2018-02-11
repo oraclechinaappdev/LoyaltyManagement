@@ -147,7 +147,7 @@
    con.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
     OutputStream os = con.getOutputStream();
 	//	os.write(POST_PARAMS.getBytes());
-        os.write(postData));
+        os.write(postData);
 		os.flush();
 		os.close();
 		int responseCode = con.getResponseCode();
