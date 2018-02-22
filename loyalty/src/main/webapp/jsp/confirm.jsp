@@ -116,8 +116,8 @@
     // This is the actual MCS URL
     //    it is composed with parameters in DB
     // https://mcs-{your-mcs-identity-domain}.mobileenv.us2.oraclecloud.com:443/mobile/custom/LoyaltyManagementAPI/offer/notify
-    mcs = mcsiddom + "/mobile/custom/" + mypush + "/notifyAll";
-    //
+    mcs = mcsiddom + "/mobile/custom/push/notifyAll";
+   System.out.println("MCS:"+mcs);
     URL obj = new URL(null, mcs, new sun.net.www.protocol.https.Handler());
     HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
     con.setHostnameVerifier(hostnameVerifier);
@@ -129,7 +129,7 @@
     //   which is retrieve from DB
     con.setRequestProperty("Authorization","Basic " + annoy);
     //
-    con.setRequestProperty("Content-Type","application/json");
+    //con.setRequestProperty("Content-Type","application/json");
     con.setDoOutput(true);
     // This is the JSON payload of the push notification
     //
@@ -138,8 +138,8 @@
     //String POST_PARAMS = "{\"message\": \"" + offmsg + "\", ";
     //  POST_PARAMS = POST_PARAMS + "\"offerid\": " + nextid + "}";
 
-   String urlParameters  = "title="+offmsg"&descrption=offer-"+nextid;
-   byte[] postData       = urlParameters.getBytes( StandardCharsets.UTF_8 );
+   String urlParameters  = "title="+offmsg+"&description=offer-"+nextid;
+   byte[] postData       = urlParameters.getBytes();
    int    postDataLength = postData.length;
     //
     //
@@ -152,10 +152,12 @@
 		os.close();
 		int responseCode = con.getResponseCode();
     // the next statement is for debug ONLY
-		// System.out.println("POST Response Code :: " + responseCode);
+		System.out.println("POST Response Code :: " + responseCode);
     //
     // checking response from MCS
-		if (responseCode == HttpsURLConnection.HTTP_CREATED) { //success
+		if (responseCode == HttpsURLConnection.HTTP_CREATED ||
+            responseCode == HttpsURLConnection.HTTP_CREATED ||
+            responseCode == HttpsURLConnection.	HTTP_OK) {
 			BufferedReader in = new BufferedReader(new InputStreamReader(
 				con.getInputStream()));
 			String inputLine;
